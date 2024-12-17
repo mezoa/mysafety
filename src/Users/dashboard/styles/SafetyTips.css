@@ -1,0 +1,77 @@
+.safety-tips-container {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.safety-tips-header {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.warning-icon {
+  font-size: 18px;
+  color: var(--primary-dark);
+}
+
+.calendar-icon {
+  margin-right: 8px;
+  color: #666;
+}
+
+.safety-tips-header h2 {
+  margin: 0;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.day-label {
+  padding: 10px 20px;
+  background: #f8f8f8;
+  color: #333;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.tips-content {
+  padding: 16px;
+}
+
+.tip-item {
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tip-item:last-child {
+  margin-bottom: 0;
+}
+
+.tip-item p {
+  margin: 0 0 6px 0;
+  color: #333;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.tip-item a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tip-icon {
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  font-size: 16px;
+} 
