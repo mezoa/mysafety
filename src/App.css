@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo {
@@ -38,7 +41,7 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #6E6E6E;
 }
 
 @import '~@fortawesome/fontawesome-free/css/all.css';

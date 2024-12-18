@@ -3,7 +3,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-top: 24px;
+  height: 180vh;
 }
 
 .news-updates-header {
@@ -11,7 +11,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #eee;
 }
 
 .news-icon {
@@ -23,19 +23,25 @@
   margin: 0;
   font-size: 15px;
   font-weight: 600;
-  color: #000;
+  color: #FFBA00 !important;
 }
 
 .updates-list {
   padding: 16px;
+  overflow-y: auto;
 }
+
 
 .update-item {
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .update-item:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .update-date {
@@ -65,11 +71,14 @@
 
 .update-text {
   padding: 12px 0;
+  color: #0C3B2E !important;
 }
 
 .update-text h3 {
   margin: 0;
   font-size: 14px;
-  color: var(--primary-dark);
+  color: #0C3B2E !important;
   line-height: 1.4;
-} 
+  text-align: left;
+}
+

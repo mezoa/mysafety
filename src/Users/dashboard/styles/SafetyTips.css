@@ -14,7 +14,7 @@
 }
 
 .warning-icon {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--primary-dark);
 }
 
@@ -25,7 +25,7 @@
 
 .safety-tips-header h2 {
   margin: 0;
-  color: #000;
+  color: #FFBA00;
   font-size: 15px;
   font-weight: 600;
 }
@@ -37,6 +37,7 @@
   font-size: 13px;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .tips-content {
@@ -57,9 +58,9 @@
 
 .tip-item p {
   margin: 0 0 6px 0;
-  color: #333;
+  color: var(--primary-dark);
   font-size: 13px;
-  font-style: italic;
+  font-weight: 500;
   line-height: 1.4;
 }
 

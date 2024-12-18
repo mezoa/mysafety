@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const NewsUpdates = ({ updates }) => {
+const NewsUpdates = ({ updates }) => {
   return (
     <div className="news-updates-section">
       <div className="news-updates-header">
         <i className="far fa-newspaper news-icon"></i>
-        <h2>News and Updates</h2>
+        <h2 style={{ color: '#FFBA00' }}>News and Updates</h2>
       </div>
       <div className="updates-list">
         {updates.map((update, index) => (
@@ -17,7 +17,7 @@ export const NewsUpdates = ({ updates }) => {
             <div className="update-content">
               <img src={update.image} alt={update.title} className="update-image" />
               <div className="update-text">
-                <h3>{update.title}</h3>
+                <h3 style={{ color: '#0C3B2E' }}>{update.title}</h3>
               </div>
             </div>
           </div>
@@ -25,4 +25,6 @@ export const NewsUpdates = ({ updates }) => {
       </div>
     </div>
   );
-}; 
+};
+
+export default NewsUpdates; 
