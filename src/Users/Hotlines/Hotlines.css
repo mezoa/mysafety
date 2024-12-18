@@ -1,0 +1,118 @@
+.page-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.hotlines-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  background: #ffc107;
+  color: #000;
+  padding: 1rem;
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+.contact-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-label {
+  font-weight: 500;
+  width: 200px;
+  color: #666;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.contact-value {
+  flex: 1;
+  text-align: center;
+}
+
+.hotlines-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hotlines-table th,
+.hotlines-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.hotlines-table th {
+  font-weight: 500;
+  color: #666;
+  background: #f8f9fa;
+}
+
+.foi-officer {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.foi-officer:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.foi-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.foi-position {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.foi-contact {
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .hotlines-container {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+
+  .contact-row {
+    flex-direction: column;
+  }
+
+  .contact-label {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  .hotlines-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
