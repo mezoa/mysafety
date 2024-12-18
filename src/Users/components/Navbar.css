@@ -31,10 +31,12 @@
   font-weight: 500;
   padding: 8px 0;
   position: relative;
+  transition: color 0.3s ease;
 }
 
+/* Active state styles */
 .nav-link.active {
-  color: var(--primary-dark);
+  color: #006400;
   font-weight: 600;
 }
 
@@ -44,8 +46,35 @@
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--primary-dark);
+  height: 3px;
+  background-color: #006400;
+  border-radius: 2px;
+}
+
+/* Updated hover styles to yellow */
+.nav-link:hover {
+  color: #FFD700;
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FFD700;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+/* Don't show yellow hover effect on active link */
+.nav-link.active:hover {
+  color: #006400;
+}
+
+.nav-link.active:hover::after {
+  background-color: #006400;
 }
 
 .navbar-user {

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
+  const location = useLocation();
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -11,11 +13,36 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-links">
-          <Link to="/" className="nav-link active">Home</Link>
-          <Link to="/evacuation-routes" className="nav-link">Evacuation Routes</Link>
-          <Link to="/events" className="nav-link">Events</Link>
-          <Link to="/hotlines" className="nav-link">Hotlines</Link>
-          <Link to="/response-team" className="nav-link">Response Team</Link>
+          <Link 
+            to="/" 
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/evacuation-routes" 
+            className={`nav-link ${location.pathname === '/evacuation-routes' ? 'active' : ''}`}
+          >
+            Evacuation Routes
+          </Link>
+          <Link 
+            to="/events" 
+            className={`nav-link ${location.pathname === '/events' ? 'active' : ''}`}
+          >
+            Events
+          </Link>
+          <Link 
+            to="/hotlines" 
+            className={`nav-link ${location.pathname === '/hotlines' ? 'active' : ''}`}
+          >
+            Hotlines
+          </Link>
+          <Link 
+            to="/response-team" 
+            className={`nav-link ${location.pathname === '/response-team' ? 'active' : ''}`}
+          >
+            Response Team
+          </Link>
         </div>
         <div className="navbar-user">
           <i className="fas fa-globe language-icon"></i>
