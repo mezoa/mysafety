@@ -15,8 +15,16 @@ import './ApplicationModal.css';
 const ApplicationModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    onClose();
+    const form = e.target;
+
+    // Check if the form is valid
+    if (form.checkValidity()) {
+      // Handle form submission logic here
+      onClose();
+    } else {
+      // Trigger validation UI
+      form.reportValidity();
+    }
   };
 
   return (

@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './Users/dashboard/dashboard';
 import Events from './Users/Events/events.jsx';
+import Hotlines from './Users/Hotlines/hotlines';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+
 
 
 // Create router with ALL future flags enabled
@@ -20,6 +22,10 @@ const router = createBrowserRouter(
     {
       path: "/events",
       element: <Events />,
+    },
+    {
+      path: "/hotlines",
+      element: <Hotlines />,
     },
   ],
   {
