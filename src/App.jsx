@@ -5,6 +5,8 @@ import EvacuationRoute from './Users/evac-route/evac_route';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Hotlines from './Users/Hotlines/hotlines';
+import Teams from './Users/Teams/teams';
 
 
 // Create router with ALL future flags enabled
@@ -25,6 +27,14 @@ const router = createBrowserRouter(
     {
       path: "/events",
       element: <Events />,
+    },
+    {
+      path: "/hotlines",
+      element: <Hotlines />,
+    },
+    {
+      path: "/response-team",
+      element: <Teams />,
     },
   ],
   {
