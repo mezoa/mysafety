@@ -5,6 +5,7 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+
 // Create router with ALL future flags enabled
 const router = createBrowserRouter(
   [
@@ -15,7 +16,11 @@ const router = createBrowserRouter(
     {
       path: "/dashboard",
       element: <Dashboard />,
-    }
+    },
+    {
+      path: "/events",
+      element: <Events />,
+    },
   ],
   {
     future: {
