@@ -9,7 +9,7 @@ export const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/">
-            <img src="/Users/logo.png" alt="MySafety" />
+            <img src="/Users/yellowlogo.png" alt="MySafety" />
           </Link>
         </div>
         <div className="navbar-links">
