@@ -20,7 +20,7 @@ const buildings = [
     coordinates: [125.597619, 8.957245], // [longitude, latitude]
     images: {
       building: '/Users/Evac-route/IMG_20241118_111237_648.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -30,7 +30,7 @@ const buildings = [
     coordinates: [125.597822, 8.956142],
     images: {
       building: '/Users/Evac-route/IMG_20241118_111520_439.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -40,7 +40,7 @@ const buildings = [
     coordinates: [125.597852, 8.955381],
     images: {
       building: '/Users/Evac-route/IMG_20241118_083929_490.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -50,7 +50,7 @@ const buildings = [
     coordinates: [125.597914, 8.955004],
     images: {
       building: '/Users/Evac-route/IMG_20241118_112341_651.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -60,7 +60,7 @@ const buildings = [
     coordinates: [125.598705, 8.955515],
     images: {
       building: '/Users/Evac-route/IMG_20241118_112551_741.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -70,7 +70,7 @@ const buildings = [
     coordinates: [125.596329, 8.957795],
     images: {
       building: '/Users/Evac-route/IMG_20241118_081240_207.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -80,7 +80,7 @@ const buildings = [
     coordinates: [125.596764, 8.959226],
     images: {
       building: '/Users/Evac-route/IMG_20241118_105751_830.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -90,7 +90,7 @@ const buildings = [
     coordinates: [125.596570, 8.955590],
     images: {
       building: '/Users/Evac-route/IMG_20241118_112128_027.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -100,7 +100,7 @@ const buildings = [
     coordinates: [125.595590, 8.955989],
     images: {
       building: '/Users/Evac-route/IMG_20241118_081637_880.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   },
@@ -110,7 +110,7 @@ const buildings = [
     coordinates: [125.595752, 8.955064],
     images: {
       building: '/Users/Evac-route/IMG_20241118_111841_321.jpg',
-      evacuation: '/evacuation-routes/admin-building.jpg'
+      evacuation: '/Users/Evac-route/Evac_route_1st.jpg'
     },
     instructions: 'Exit through the main entrance. Proceed to the oval ground assembly area.'
   }
