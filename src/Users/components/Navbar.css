@@ -1,13 +1,17 @@
 .navbar {
-  background-color: var(--white);
-  padding: 12px 0;
+  width: 100%;
+  background: var(--white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;

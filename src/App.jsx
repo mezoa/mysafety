@@ -1,17 +1,36 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './Users/dashboard/dashboard';
 import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+// Create router with ALL future flags enabled
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Dashboard />,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+    }
+  ],
+  {
+    future: {
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+      v7_partialHydration: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_prependBasename: true,
+      v7_skipActionErrorRevalidation: true
+    }
+  }
+);
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

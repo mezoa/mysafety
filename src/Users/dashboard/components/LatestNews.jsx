@@ -4,8 +4,10 @@ export const LatestNews = ({ newsItems }) => {
   return (
     <div className="news-section">
       <div className="news-header">
-        <i className="fas fa-newspaper"></i>
-        <h2>Latest News</h2>
+        <div className="news-title-wrapper">
+          <i className="fas fa-newspaper"></i>
+          <h2 style={{ color: '#FFBA00' }}>Latest News</h2>
+        </div>
       </div>
       {newsItems.map((item, index) => (
         <div key={index} className="news-item">
@@ -13,7 +15,14 @@ export const LatestNews = ({ newsItems }) => {
             <i className="far fa-clock"></i>
             <span>{item.date}</span>
           </div>
-          <h3>{item.title}</h3>
+          <h3 style={{ 
+            color: '#0C3B2E',
+            fontWeight: '600',
+            fontSize: '16px',
+            marginBottom: '8px'
+          }}>
+            {item.title}
+          </h3>
           <p>{item.description}</p>
           <a href={item.link}>
             <i className="fas fa-arrow-right"></i> see more

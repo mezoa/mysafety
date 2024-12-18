@@ -54,5 +54,10 @@ export const newsUpdates = [
     date: 'October 8, 2024',
     image: '/Users/Dashboard/Picture3.png',
     title: 'CSU and DOST launch Geo-Safer Mindanao Project'
+  },
+  {
+    date: 'Sep 08, 2023',
+    image: '/Users/Dashboard/newsupdate4.jpg',
+    title: 'CSU goes global with French Professor holding series of lectures and trainings in CSU'
   }
 ]; 
