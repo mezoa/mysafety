@@ -17,7 +17,7 @@ const EvacuationRoute = () => {
       evacuationMaps: [
         {
           floor: '1st Floor',
-          map: '/Users/Evac-route/Evac_route.jpg'
+          map: '/Users/Evac-route/Evac_route_1st.jpg'
         },
         {
           floor: '2nd Floor',
@@ -40,7 +40,11 @@ const EvacuationRoute = () => {
       evacuationMaps: [
         {
           floor: 'Ground Floor',
-          map: '/Users/Evac-route/Evac_route.jpg'
+          map: '/Users/Evac-route/Evac_route_1st.jpg'
+        },
+        {
+            floor: '2nd Floor',
+            map: '/Users/Evac-route/Evac_route.jpg'
         }
       ]
     },
