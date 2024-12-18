@@ -20,40 +20,54 @@
   position: relative;
   animation: modalSlideIn 0.3s ease-out;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 0;
 }
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 10;
-  background: none;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
-  padding: 0;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .modal-close i {
   color: #fff;
-  font-size: 24px;
-  transition: transform 0.2s ease;
-}
-
-.modal-close i:hover {
-  transform: scale(1.1);
+  font-size: 18px;
 }
 
 .modal-content {
-  padding: 24px;
+  padding: 16px;
+  padding-top: 0;
   overflow-y: auto;
-  max-height: calc(90vh - 76px);
+  max-height: 87vh;
 }
 
 .modal-header {
   background: #0C3B2E;
-  padding: 16px 24px;
+  padding: 16px 48px 16px 24px;
   border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-header i {
@@ -75,16 +89,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px;
+  padding: 16px;
 }
 
 .checklist-item {
   background: #fff;
   border-radius: 8px;
-  padding: 16px 20px;
+  padding: 10px 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(12, 59, 46, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0;
 }
 
 .checklist-item:hover {
@@ -141,10 +156,10 @@
 .reminder-box {
   background: linear-gradient(135deg, #0C3B2E, #1a5744);
   color: white;
-  padding: 16px 20px;
+  padding: 16px 16px;
   border-radius: 6px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 7px;
   position: relative;
   overflow: hidden;
 }
@@ -204,15 +219,15 @@
   .safety-modal {
     width: 95%;
     margin: 12px;
-    max-height: 95vh;
+    max-height: 200vh;
   }
 
   .modal-content {
-    max-height: calc(95vh - 76px);
+    max-height: calc(90vh - 60px);
   }
 
   .modal-header {
-    margin-bottom: 24px;
+    padding: 14px 44px 14px 20px;
   }
 
   .modal-header h2 {

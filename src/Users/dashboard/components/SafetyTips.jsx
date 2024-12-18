@@ -13,6 +13,12 @@ export const SafetyTipsSection = ({ tips }) => {
     setIsModalOpen(false);
   };
 
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains('safety-modal-overlay')) {
+      closeModal();
+    }
+  };
+
   return (
     <>
       <section className="safety-tips-container">
@@ -35,16 +41,14 @@ export const SafetyTipsSection = ({ tips }) => {
       </section>
 
       {isModalOpen && (
-        <div className="safety-modal-overlay" onClick={closeModal}>
-          <div className="safety-modal" onClick={e => e.stopPropagation()}>
-            <i className="fas fa-times modal-close" onClick={closeModal}></i>
-            
+        <div className="safety-modal-overlay" onClick={handleOverlayClick}>
+          <div className="safety-modal">
+            <div className="modal-header">
+              <i className="fas fa-shield-alt"></i>
+              <h2>Emergency Preparedness Checklist For School</h2>
+              <button className="modal-close" onClick={closeModal}>×</button>
+            </div>
             <div className="modal-content">
-              <div className="modal-header">
-                <i className="fas fa-shield-alt"></i>
-                <h2>Emergency Preparedness Checklist For School</h2>
-              </div>
-
               <div className="checklist-container">
                 <div className="checklist-item">
                   <h3>1. Locate Exits and Safe Zones</h3>
