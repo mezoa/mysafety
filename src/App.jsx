@@ -5,6 +5,7 @@ import Hotlines from './Users/Hotlines/hotlines';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Teams from './Users/Teams/teams';
 
 
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter(
     {
       path: "/hotlines",
       element: <Hotlines />,
+    },
+    {
+      path: "/response-team",
+      element: <Teams />,
     },
   ],
   {
