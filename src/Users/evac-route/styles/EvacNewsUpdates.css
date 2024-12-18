@@ -1,0 +1,149 @@
+.evac-news-updates-section {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: calc(100vh - 185px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.evac-news-updates-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 2px solid #eee;
+  background: white;
+  flex-shrink: 0;
+}
+
+.evac-news-updates-header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFBA00;
+}
+
+.evac-news-icon {
+  font-size: 18px;
+  color: var(--primary-dark);
+}
+
+.evac-updates-list {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.evac-update-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.evac-update-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.evac-update-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.evac-update-date i {
+  font-size: 12px;
+}
+
+.evac-update-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.evac-update-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.evac-update-text {
+  padding: 12px 0;
+}
+
+.evac-update-text h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #0C3B2E;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.evac-update-text p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.evac-see-more {
+  padding: 16px;
+  border-top: 1px solid #eee;
+  background: white;
+  flex-shrink: 0;
+}
+
+.evac-see-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #0C3B2E;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.evac-see-more-btn:hover {
+  color: #FFBA00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .evac-news-updates-section {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .evac-update-image {
+    height: 140px;
+  }
+}
+
+/* Custom Scrollbar */
+.evac-updates-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.evac-updates-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.evac-updates-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.evac-updates-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+} 

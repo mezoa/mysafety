@@ -25,7 +25,7 @@ export const LatestNews = ({ newsItems }) => {
           </h3>
           <p>{item.description}</p>
           <a href={item.link}>
-            <i className="fas fa-arrow-right"></i> see more
+            <i className="fas fa-arrow-right"></i> See more
           </a>
         </div>
       ))}
