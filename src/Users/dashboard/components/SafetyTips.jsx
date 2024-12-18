@@ -37,9 +37,7 @@ export const SafetyTipsSection = ({ tips }) => {
       {isModalOpen && (
         <div className="safety-modal-overlay" onClick={closeModal}>
           <div className="safety-modal" onClick={e => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              <i className="fas fa-times"></i>
-            </button>
+            <i className="fas fa-times modal-close" onClick={closeModal}></i>
             
             <div className="modal-content">
               <div className="modal-header">

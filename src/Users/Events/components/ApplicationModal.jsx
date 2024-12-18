@@ -1,9 +1,18 @@
 import React from 'react';
+import { 
+  Dialog, 
+  DialogTitle, 
+  DialogContent, 
+  TextField, 
+  Button, 
+  IconButton, 
+  Box, 
+  Grid 
+} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import './ApplicationModal.css';
 
 const ApplicationModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -11,47 +20,159 @@ const ApplicationModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h2>Application Form</h2>
-          <button className="close-button" onClick={onClose}>×</button>
-        </div>
-        
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <div className="name-inputs">
-              <div>
-                <input type="text" placeholder="First name" required />
-                <span className="input-label">First name</span>
-              </div>
-              <div>
-                <input type="text" placeholder="Last name" required />
-                <span className="input-label">Last name</span>
-              </div>
-            </div>
-          </div>
+    <Dialog 
+      open={isOpen} 
+      onClose={onClose}
+      maxWidth="md"
+      fullWidth
+      PaperProps={{
+        style: {
+          borderRadius: '16px',
+          maxWidth: '500px',
+        }
+      }}
+    >
+      <DialogTitle 
+        sx={{ 
+          bgcolor: '#0C3B2E',
+          color: 'white',
+          p: 2,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}
+      >
+        <span style={{ fontSize: '22px', fontWeight: 600 }}>Application Form</span>
+        <IconButton 
+          onClick={onClose}
+          sx={{ 
+            color: 'white',
+            p: 0.5,
+            '&:hover': { 
+              opacity: 0.8 
+            }
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
 
-          <div className="form-group">
-            <label>ID Number</label>
-            <input type="text" placeholder="ex. 211-02009" required style={{ width: '95%' }} />
-          </div>
+      <DialogContent sx={{ p: 2.5, pt: 2.5 }}>
+        <Box component="form" onSubmit={handleSubmit} noValidate>
+          <Grid container spacing={2}>
+            {/* Name Fields */}
+            <Grid item xs={12}>
+              <Box sx={{ mb: 0.5, fontWeight: 500 }}>Name</Box>
+              <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <TextField
+                    fullWidth
+                    required
+                    placeholder="First name"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        backgroundColor: '#f8f9fa'
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    fullWidth
+                    required
+                    placeholder="Last name"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        backgroundColor: '#f8f9fa'
+                      }
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
 
-          <div className="form-group">
-            <label>E-mail</label>
-            <input type="email" placeholder="ex. cj.pds120@gmail.com" required style={{ width: '95%' }} />
-          </div>
+            {/* ID Number Field */}
+            <Grid item xs={12}>
+              <Box sx={{ mb: 0.5, fontWeight: 500 }}>ID Number</Box>
+              <TextField
+                fullWidth
+                required
+                placeholder="Enter your student ID (e.g., 211-02009)"
+                variant="outlined"
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f8f9fa'
+                  }
+                }}
+              />
+            </Grid>
 
-          <div className="form-group">
-            <label>Contact Number</label>
-            <input type="tel" placeholder="ex. 09923804733" required style={{ width: '95%' }} />
-          </div>
+            {/* Email Field */}
+            <Grid item xs={12}>
+              <Box sx={{ mb: 0.5, fontWeight: 500 }}>Email Address</Box>
+              <TextField
+                fullWidth
+                required
+                type="email"
+                placeholder="Enter your email address"
+                variant="outlined"
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f8f9fa'
+                  }
+                }}
+              />
+            </Grid>
 
-          <button type="submit" className="submit-button">Submit Application</button>
-        </form>
-      </div>a
-    </div>
+            {/* Contact Number Field */}
+            <Grid item xs={12}>
+              <Box sx={{ mb: 0.5, fontWeight: 500 }}>Contact Number</Box>
+              <TextField
+                fullWidth
+                required
+                type="tel"
+                placeholder="Enter your contact number"
+                variant="outlined"
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f8f9fa'
+                  }
+                }}
+              />
+            </Grid>
+
+            {/* Submit Button */}
+            <Grid item xs={12}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{
+                  mt: 1,
+                  bgcolor: '#FFBA00',
+                  py: 1.2,
+                  fontSize: '15px',
+                  textTransform: 'none',
+                  fontWeight: 500,
+                  '&:hover': {
+                    bgcolor: '#e5a800'
+                  }
+                }}
+              >
+                Submit Application
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 };
 

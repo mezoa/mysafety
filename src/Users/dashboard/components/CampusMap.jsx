@@ -162,74 +162,55 @@ export const CampusMap = () => {
 
         // Add click event to marker
         marker.getElement().addEventListener('click', (e) => {
-          e.stopPropagation();
+          e.stopPropagation(); // Prevent map click from immediately closing popup
           
           if (popup.current) popup.current.remove();
           
           popup.current = new mapboxgl.Popup({
-            maxWidth: '500px',
             closeButton: true,
-            closeOnClick: true,
-            className: 'centered-modal',
+            closeOnClick: false,
+            className: 'building-popup',
             focusAfterOpen: false,
+            maxWidth: 'none',
+            anchor: 'center',
+            offset: 0,
+            positionOptions: {
+              trackResize: false
+            }
           })
-            .setLngLat(building.coordinates)
+            .setLngLat(map.current.getCenter())
             .setHTML(`
-              <div class="modal-content">
-                <div class="modal-header">
-                  <div class="header-content">
-                    <h2>${building.name}</h2>
-                    <div class="location-badge">
-                      <i class="fas fa-map-marker-alt"></i>
-                      CSU Main Campus
-                    </div>
-                  </div>
+              <div class="popup-content">
+                <div class="popup-header">
+                  <h3>${building.name}</h3>
                 </div>
                 
-                <div class="modal-body">
-                  <div class="image-gallery">
-                    <div class="main-image">
+                <div class="popup-body">
+                  <div class="building-section">
+                    <div class="image-container">
                       <img src="${building.images.building}" 
                            alt="${building.name}" 
                            class="building-image" 
-                           loading="eager"
                            onerror="this.src='https://via.placeholder.com/300x200?text=Building+Image'"/>
-                      <div class="image-label">Building View</div>
                     </div>
                   </div>
 
-                  <div class="evacuation-info">
-                    <div class="info-header">
-                      <i class="fas fa-route"></i>
-                      <h3>Evacuation Information</h3>
+                  <div class="evacuation-section">
+                    <h4>Evacuation Route</h4>
+                    <div class="image-container">
+                      <img src="${building.images.evacuation}" 
+                           alt="Evacuation Route" 
+                           class="evacuation-image"
+                           onerror="this.src='https://via.placeholder.com/300x200?text=Evacuation+Route'"/>
                     </div>
-                    
-                    <div class="evacuation-details">
-                      <div class="route-image">
-                        <img src="${building.images.evacuation}" 
-                             alt="Evacuation Route" 
-                             class="evacuation-image"
-                             loading="eager"
-                             onerror="this.src='https://via.placeholder.com/300x200?text=Evacuation+Route'"/>
-                        <div class="image-label">Evacuation Route</div>
-                      </div>
-                      
-                      <div class="instructions-box">
-                        <div class="instructions-header">
-                          <i class="fas fa-info-circle"></i>
-                          <h4>Emergency Instructions</h4>
-                        </div>
-                        <p>${building.instructions}</p>
-                      </div>
+                    <div class="evacuation-instructions">
+                      <p>${building.instructions}</p>
                     </div>
                   </div>
                 </div>
               </div>
-            `);
-
-          requestAnimationFrame(() => {
-            popup.current.addTo(map.current);
-          });
+            `)
+            .addTo(map.current);
         });
       });
 
