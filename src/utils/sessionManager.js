@@ -5,14 +5,14 @@ const DUMMY_USERS = [
     email: "cj.pads120@gmail.com",
     firstName: "Carl John",
     lastName: "Padecio",
-    password: "cjpads120"
+    password: "password123"
   },
   {
     idNumber: "211-02010",
     email: "cj.pads120@gmail.com",
     firstName: "Carl John",
     lastName: "Padecio",
-    password: "cjpads120"
+    password: "password123"
   }
 ];
 
