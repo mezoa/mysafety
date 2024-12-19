@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Dialog, 
   DialogTitle, 
@@ -13,16 +13,62 @@ import CloseIcon from '@mui/icons-material/Close';
 import './ApplicationModal.css';
 
 const ApplicationModal = ({ isOpen, onClose }) => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    idNumber: '',
+    email: '',
+    contactNumber: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
 
-    // Check if the form is valid
     if (form.checkValidity()) {
-      // Handle form submission logic here
-      onClose();
+      try {
+        const response = await fetch('http://localhost:5000/api/submit-application', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            idNumber: formData.idNumber,
+            email: formData.email,
+            contactNumber: formData.contactNumber
+          })
+        });
+
+        if (response.ok) {
+          alert('Application submitted successfully!');
+          
+          // Reset form and close modal
+          setFormData({
+            firstName: '',
+            lastName: '',
+            idNumber: '',
+            email: '',
+            contactNumber: ''
+          });
+          onClose();
+        } else {
+          alert('Failed to submit application');
+        }
+      } catch (error) {
+        console.error('Error submitting application:', error);
+        alert('Error submitting application');
+      }
     } else {
-      // Trigger validation UI
       form.reportValidity();
     }
   };
@@ -79,6 +125,9 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                     placeholder="First name"
                     variant="outlined"
                     size="small"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         backgroundColor: '#f8f9fa'
@@ -93,6 +142,9 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                     placeholder="Last name"
                     variant="outlined"
                     size="small"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         backgroundColor: '#f8f9fa'
@@ -112,6 +164,9 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                 placeholder="Enter your student ID (e.g., 211-02009)"
                 variant="outlined"
                 size="small"
+                name="idNumber"
+                value={formData.idNumber}
+                onChange={handleInputChange}
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     backgroundColor: '#f8f9fa'
@@ -130,6 +185,9 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                 placeholder="Enter your email address"
                 variant="outlined"
                 size="small"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     backgroundColor: '#f8f9fa'
@@ -148,6 +206,9 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                 placeholder="Enter your contact number"
                 variant="outlined"
                 size="small"
+                name="contactNumber"
+                value={formData.contactNumber}
+                onChange={handleInputChange}
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     backgroundColor: '#f8f9fa'

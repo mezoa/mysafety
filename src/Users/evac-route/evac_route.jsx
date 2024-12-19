@@ -12,29 +12,6 @@ const EvacuationRoute = () => {
   const buildings = [
     {
       id: 1,
-      name: 'College of Engineering and Geosciences',
-      image: '/Users/Evac-route/IMG_20241118_112341_651.jpg',
-      evacuationMaps: [
-        {
-          floor: '1st Floor',
-          map: '/Users/Evac-route/Evac_route_1st.jpg'
-        },
-        {
-          floor: '2nd Floor',
-          map: '/Users/Evac-route/Evac_route.jpg'
-        },
-        {
-          floor: '3rd Floor',
-          map: '/Users/Evac-route/Evac_route.jpg'
-        },
-        {
-          floor: '4th Floor',
-          map: '/Users/Evac-route/Evac_route.jpg'
-        }
-      ]
-    },
-    {
-      id: 2,
       name: 'College of Education',
       image: '/Users/Evac-route/IMG_20241118_105751_830.jpg',
       evacuationMaps: [
@@ -43,18 +20,45 @@ const EvacuationRoute = () => {
           map: '/Users/Evac-route/Evac_route_1st.jpg'
         },
         {
-            floor: '2nd Floor',
-            map: '/Users/Evac-route/Evac_route.jpg'
+          floor: '2nd Floor',
+          map: '/Users/Evac-route/Evac_route.jpg'
         }
       ]
     },
     {
-      id: 3,
+      id: 2,
       name: 'CSU-Main Library',
       image: '/Users/Evac-route/IMG_20241118_081240_207.jpg',
       evacuationMaps: [
         {
           floor: 'Ground Floor',
+          map: '/Users/Evac-route/LIB 1_page-0001.jpg'
+        },
+        {
+          floor: '2nd Floor',
+          map: '/Users/Evac-route/LIB 2_page-0001.jpg'
+        },
+        {
+          floor: '3rd Floor',
+          map: '/Users/Evac-route/LIB 3_page-0001.jpg'
+        }
+      ]
+    },
+    {
+      id: 3,
+      name: 'College of Engineering and Geosciences',
+      image: '/Users/Evac-route/IMG_20241118_112341_651.jpg',
+      evacuationMaps: [
+        {
+          floor: 'Ground Floor',
+          map: '/Users/Evac-route/Evac_route_1st.jpg'
+        },
+        {
+          floor: '2nd Floor',
+          map: '/Users/Evac-route/Evac_route.jpg'
+        },
+        {
+          floor: '3rd Floor',
           map: '/Users/Evac-route/Evac_route.jpg'
         }
       ]
