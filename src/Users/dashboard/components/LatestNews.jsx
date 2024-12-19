@@ -34,4 +34,14 @@ export const LatestNews = ({ newsItems }) => {
       </button>
     </div>
   );
-}; 
+};
+
+export const NewsItem = ({ item }) => (
+  <div className="notification-item">
+    <div className="notification-title">{item.title}</div>
+    <div className="notification-date">
+      <i className="far fa-clock"></i>
+      <span>{item.date}</span>
+    </div>
+  </div>
+); 

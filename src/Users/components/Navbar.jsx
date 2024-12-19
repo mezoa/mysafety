@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getUserSession, clearUserSession } from '../../utils/sessionManager';
+import { NewsItem } from '../dashboard/components/LatestNews';
+import { notificationItems } from './NotificationData';
 
 export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const userData = getUserSession();
@@ -16,6 +20,18 @@ export const Navbar = () => {
       navigate('/signin');
     }
   }, [navigate]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowNotifications(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSignOut = () => {
     clearUserSession();
@@ -61,6 +77,29 @@ export const Navbar = () => {
           >
             Response Team
           </Link>
+        </div>
+        <div className="notifications-dropdown" ref={dropdownRef}>
+          <div 
+            className="notification-icon" 
+            onClick={() => setShowNotifications(!showNotifications)}
+          >
+            <i className="fas fa-bell"></i>
+          </div>
+          {showNotifications && (
+            <div className="notifications-menu">
+              <h3 className="notifications-header">Notifications</h3>
+              {notificationItems.map((item, index) => (
+                <div key={index} className="notification-item">
+                  <div className="notification-title">{item.title}</div>
+                  <div className="notification-date">
+                    <i className="far fa-clock"></i>
+                    <span>{item.date}</span>
+                  </div>
+                  <div className="notification-description">{item.description}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="navbar-user">
           <i className="fas fa-globe language-icon"></i>
