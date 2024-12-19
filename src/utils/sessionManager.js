@@ -1,18 +1,18 @@
 // Dummy user data for testing
 const DUMMY_USERS = [
   {
-    idNumber: "123-45678",
-    email: "test@example.com",
-    firstName: "John",
-    lastName: "Doe",
-    password: "password123" // In a real app, this should be hashed
+    idNumber: "211-02009",
+    email: "cj.pads120@gmail.com",
+    firstName: "Carl John",
+    lastName: "Padecio",
+    password: "cjpads120"
   },
   {
-    idNumber: "987-65432",
-    email: "admin@example.com",
-    firstName: "Admin",
-    lastName: "User",
-    password: "admin123"
+    idNumber: "211-02010",
+    email: "cj.pads120@gmail.com",
+    firstName: "Carl John",
+    lastName: "Padecio",
+    password: "cjpads120"
   }
 ];
 
