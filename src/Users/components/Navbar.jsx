@@ -1,21 +1,39 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { getUserSession, clearUserSession } from '../../utils/sessionManager';
 
 export const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    const userData = getUserSession();
+    if (userData && userData.isLoggedIn) {
+      setUser(userData);
+    } else {
+      navigate('/signin');
+    }
+  }, [navigate]);
+
+  const handleSignOut = () => {
+    clearUserSession();
+    navigate('/signin');
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <Link to="/">
+          <Link to="/dashboard">
             <img src="/Users/yellowlogo.png" alt="MySafety" />
           </Link>
         </div>
         <div className="navbar-links">
           <Link 
-            to="/" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            to="/dashboard" 
+            className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
           >
             Home
           </Link>
@@ -46,8 +64,23 @@ export const Navbar = () => {
         </div>
         <div className="navbar-user">
           <i className="fas fa-globe language-icon"></i>
-          <span className="user-name">Hakdog</span>
-          <span className="dropdown-arrow">▼</span>
+          <div 
+            className="user-dropdown"
+            onClick={() => setShowDropdown(!showDropdown)}
+          >
+            <span className="user-name">
+              {user ? `${user.firstName} ${user.lastName}` : 'Guest'}
+            </span>
+            <span className="dropdown-arrow">▼</span>
+            
+            {showDropdown && (
+              <div className="dropdown-menu">
+                <button onClick={handleSignOut} className="sign-out-btn">
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

@@ -2,23 +2,32 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './Users/dashboard/dashboard';
 import Events from './Users/Events/events.jsx';
 import EvacuationRoute from './Users/evac-route/evac_route';
+import SignIn from './Auth/Sign-in/sign-in';
+import SignUp from './Auth/Sign-up/sign-up';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Hotlines from './Users/Hotlines/hotlines';
 import Teams from './Users/Teams/teams';
 
-
 // Create router with ALL future flags enabled
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <Dashboard />,
+      element: <SignIn />,
     },
     {
       path: "/dashboard",
       element: <Dashboard />,
+    },
+    {
+      path: "/signin",
+      element: <SignIn />,
+    },
+    {
+      path: "/signup",
+      element: <SignUp />,
     },
     {
       path: "/evacuation-routes",
@@ -52,16 +61,6 @@ const router = createBrowserRouter(
 
 function App() {
   return <RouterProvider router={router} />;
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/evacuation-routes" element={<EvacuationRoute />} />
-        <Route path="/events" element={<Events />} />
-      </Routes>
-    </Router>
-  );
 }
 
 export default App;
