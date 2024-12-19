@@ -191,7 +191,8 @@ const EvacuationRoute = () => {
       {selectedBuilding && (
         <div className="evacuation-modal-overlay" onClick={handleCloseModal}>
           <div className="evacuation-modal" onClick={e => e.stopPropagation()}>
-            <button className="modal-close" onClick={handleCloseModal}>×</button>
+            <button className="modal-close" onClick={handleCloseModal}>
+            </button>
             
             <div className="modal-header">
               <h2>{selectedBuilding.name}</h2>
